@@ -1,0 +1,34 @@
+/* Header */
+.header {
+    background-color: #eee;
+
+	.inner {
+		height: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 20px;
+	}
+	.logo {
+		a {
+			font-weight: bold;
+			color: #333;
+			text-decoration: none;
+		}
+	}
+	.gnb {
+		ul {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			column-gap: 15px;
+
+			li {
+				a {
+					color: #333;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}

@@ -20,3 +20,30 @@
     ```javascript
     node app.js
     ```
+
+<hr />
+
+### SCSS 사용하기
+```javascript
+// 설치
+npm install --save-dev sass
+
+// 컴파일 명령어
+sass assets/scss:assets/css --watch
+```
+
+<hr />
+
+### EJS 확장 프로그램 추천 목록
+- EJS Language Support
+- EJS Snippets
+- EJS Pulse
+
+
+
+
+
+
+
+
+
