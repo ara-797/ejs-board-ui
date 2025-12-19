@@ -6,3 +6,30 @@
     font-weight: bold;
     margin: 15px 0;
 }
+.filter-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+.button-wrap {
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+
+    a, button {
+        height: 27px;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        background-color: #777;
+        padding: 0 12px;
+
+        &.active {
+            background-color: #333;
+        }
+    }
+}

@@ -11,13 +11,28 @@
     <!-- Header -->
     <%- include('components/header') %>
 
-    <div class="container">
-        <h2 class="page-title"><%= pageTitle %></h2>
+    <!-- 리스트 데이터 가공 -->
+    <% 
+        const totalCnt = filteredList.length;
+        const doneCnt = filteredList.filter(todo => todo.done).length;
+    %>
 
+    <div class="container">
+        <div class="filter-wrap">
+            <h2 class="page-title">
+                <%= pageTitle %>
+                <span>(<%= doneCnt %>/<%= totalCnt %>)</span>
+            </h2>
+            <div class="button-wrap">
+                <a href="/todo" class="<%= activeFilter === 'all' ? 'active':'' %>">전체</a>
+                <a href="/todo?filter=done" class="<%= activeFilter === 'done' ? 'active':'' %>">완료</a>
+            </div>
+        </div>
+        
         <!-- TODO List -->
-        <% if(todoList.length > 0) { %>
+        <% if(filteredList.length > 0) { %>
             <ul class="todo-list">
-                <% todoList.forEach(todo => { %>
+                <% filteredList.forEach(todo => { %>
                     <%- include('components/todo-item', {todo: todo}) %>
                 <% }) %>
             </ul>

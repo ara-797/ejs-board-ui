@@ -36,10 +36,18 @@ app.get('/', (req, res) => {
 
 // TODO
 app.get('/todo', (req, res) => {
+  const filter = req.query.filter; // 쿼리스트링
+  let filteredList = todoList;
+
+  if(filter === 'done') {
+    filteredList = todoList.filter(todo => todo.done);
+  }
+
   res.render('todo', { 
-    todoList, 
+    filteredList, 
     pageTitle: 'TODO 리스트',
-    activeMenu: 'todo'
+    activeMenu: 'todo',
+    activeFilter: filter || 'all'
   });
 });
 
