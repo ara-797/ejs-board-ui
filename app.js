@@ -7,6 +7,16 @@ app.set('view engine', 'ejs');
 // 정적 파일(CSS) 설정
 app.use('/assets', express.static('assets'));
 
+const studyList = [
+  { id: 1, subject: '반복문', syntax: "<% todos.forEach() %>" },
+  { id: 2, subject: '조건문', syntax: "<% if() %> <% else %>" },
+  { id: 3, subject: 'include 문법', syntax: "<%- include('파일경로') %>" },
+  { id: 4, subject: '변수 출력', syntax: "<%= %>" },
+  { id: 5, subject: 'HTML escape 없이 출력', syntax: "<%- %>" },
+  { id: 6, subject: 'partials 나누기 (components) : header + item(옵션)', syntax: '' },
+  { id: 7, subject: 'EJS 내부에서 JavaScript 활용하기', syntax: '' }
+];
+
 const todoList = [
   { id: 1, text: '해야할 일 01', done: true },
   { id: 2, text: '해야할 일 02', done: false },
@@ -17,7 +27,7 @@ const todoList = [
 
 // HOME
 app.get('/', (req, res) => {
-  res.render('index', { pageTitle: 'HOME 화면' });
+  res.render('index', { studyList, pageTitle: 'HOME 화면' });
 });
 
 // TODO

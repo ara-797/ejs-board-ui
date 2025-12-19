@@ -89,6 +89,17 @@ table {
   text-decoration: none;
 }
 
+/* Study List */
+.study-list li:not(:last-child) {
+  margin-bottom: 20px;
+}
+.study-list li .code-wrap {
+  border-radius: 5px;
+  background-color: #eee;
+  padding: 15px;
+  margin-top: 8px;
+}
+
 /* Todo List */
 .todo-list li {
   display: flex;

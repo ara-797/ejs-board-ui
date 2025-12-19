@@ -16,33 +16,10 @@
             <h2 class="page-title"><%= pageTitle %></h2>
 
             <!-- EJS 스터디 리스트 -->
-            <ul>
-                <li>
-                    <p>반복문</p>
-                    <p>&lt;% todos.forEach() %&gt;</p>
-                </li>
-                <li>
-                    <p>조건문</p>
-                    <p>&lt;% if() %&gt; &lt;% else %&gt;</p>
-                </li>
-                <li>
-                    <p>include 문법</p>
-                    <p>&lt;%- include('파일경로') %&gt;</p>
-                </li>
-                <li>
-                    <p>변수 출력</p>
-                    <p>&lt;%= %&gt;</p>
-                </li>
-                <li>
-                    <p>HTML escape 없이 출력</p>
-                    <p>&lt;%- %&gt;</p>
-                </li>
-                <li>
-                    <p>partials 나누기 (components) : header + item(옵션)</p>
-                </li>
-                <li>
-                    <p>EJS 내부에서 JavaScript 활용하기</p>
-                </li>
+            <ul class="study-list">
+                <% studyList.forEach(study => { %>
+                    <%- include('components/study-item', {study: study}) %>
+                <% }) %>
             </ul>
             
         </div>
