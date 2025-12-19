@@ -27,12 +27,20 @@ const todoList = [
 
 // HOME
 app.get('/', (req, res) => {
-  res.render('index', { studyList, pageTitle: 'HOME 화면' });
+  res.render('index', { 
+    studyList, 
+    pageTitle: 'HOME 화면',
+    activeMenu: 'home'
+  });
 });
 
 // TODO
 app.get('/todo', (req, res) => {
-  res.render('todo', { todoList, pageTitle: 'TODO 리스트' });
+  res.render('todo', { 
+    todoList, 
+    pageTitle: 'TODO 리스트',
+    activeMenu: 'todo'
+  });
 });
 
 app.listen(3000, () => {

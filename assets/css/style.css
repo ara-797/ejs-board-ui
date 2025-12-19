@@ -88,6 +88,10 @@ table {
   color: #333;
   text-decoration: none;
 }
+.header .gnb ul li.active a {
+  font-weight: bold;
+  color: #0087ff;
+}
 
 /* Study List */
 .study-list li:not(:last-child) {

@@ -8,8 +8,12 @@
         <!-- Gnb -->
         <nav class="gnb">
             <ul>
-                <li><a href="/">HOME</a></li>
-                <li><a href="/todo">TODO</a></li>
+                <li class="<%= activeMenu === 'home' ? 'active':'' %>">
+                    <a href="/">HOME</a>
+                </li>
+                <li class="<%= activeMenu === 'todo' ? 'active':'' %>">
+                    <a href="/todo">TODO</a>
+                </li>
             </ul>
         </nav>
     </div>
