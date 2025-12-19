@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    
+    <!-- Header -->
+    <%- include('components/header') %>
+
+    <div class="container">
+        <h2 class="page-title"><%= pageTitle %></h2>
+
+        <!-- TODO List -->
+        <% if(todoList.length > 0) { %>
+            <ul class="todo-list">
+                <% todoList.forEach(todo => { %>
+                    <%- include('components/todo-item', {todo: todo}) %>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <p class="no-data">등록된 항목이 없습니다.</p>
+        <% } %>
+    </div>
+
+</body>
+</html>

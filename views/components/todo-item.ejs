@@ -1,0 +1,10 @@
+<!-- Todo Item -->
+<li class="todo-item <%= todo.done ? 'done':'' %>">
+    <p><%= todo.text %></p>
+
+    <% if(todo.done) { %>
+        <span class="status">완료</span>
+    <% } else { %>
+        <span class="status">미완료</span>
+    <% } %>
+</li>

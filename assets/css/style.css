@@ -52,6 +52,16 @@ table {
   border-spacing: 0;
 }
 
+/* Common */
+.container {
+  padding: 0 20px;
+}
+
+.page-title {
+  font-weight: bold;
+  margin: 15px 0;
+}
+
 /* Header */
 .header {
   background-color: #eee;
@@ -77,6 +87,30 @@ table {
 .header .gnb ul li a {
   color: #333;
   text-decoration: none;
+}
+
+/* Todo List */
+.todo-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 12px 15px;
+}
+.todo-list li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.todo-list li .status {
+  font-size: 14px;
+  color: #555;
+}
+.todo-list li.done {
+  background: #e0f8ff;
+}
+.todo-list li.done p {
+  text-decoration: line-through;
 }
 
 /*# sourceMappingURL=style.css.map */
