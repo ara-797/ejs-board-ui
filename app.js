@@ -61,7 +61,7 @@ app.get('/todo/:id', (req, res) => {
   const todo = todoList.find(item => item.id === id);
 
   if(!todo) {
-    return res.status(404).render('404', {
+    return res.status(404).render('error', {
       errorNum: '404',
       pageTitle: '페이지를 찾을 수 없습니다',
       activeMenu: ''
@@ -76,7 +76,7 @@ app.get('/todo/:id', (req, res) => {
 
 // 404
 app.use((req, res) => {
-  res.status(404).render('404', {
+  res.status(404).render('error', {
     errorNum: '404',
     pageTitle: '페이지를 찾을 수 없습니다',
     activeMenu: ''
@@ -87,7 +87,7 @@ app.use((req, res) => {
 app.use((err, req, res, next) => {
   console.log(err.stack);
 
-  res.status(500).render('500', {
+  res.status(500).render('error', {
     errorNum: '500',
     pageTitle: '서버 오류가 발생했습니다',
     activeMenu: ''
