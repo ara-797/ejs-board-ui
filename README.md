@@ -21,6 +21,18 @@
     node app.js
     ```
 
+4. 라이브러리 사용
+    - express-ejs-layouts
+    ```javascript
+    npm install express-ejs-layouts
+    ```
+    ```javascript
+    const expressLayouts = require('express-ejs-layouts');
+
+    app.use(expressLayouts);
+    app.set('layout', 'layout');
+    ```
+
 <hr />
 
 ### SCSS 사용하기

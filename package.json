@@ -23,7 +23,8 @@
   "homepage": "https://github.com/ara-797/ejs-board-ui#readme",
   "dependencies": {
     "ejs": "^3.1.10",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "express-ejs-layouts": "^2.5.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.11",
