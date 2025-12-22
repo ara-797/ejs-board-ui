@@ -27,6 +27,11 @@ const todoList = [
 
 // HOME
 app.get('/', (req, res) => {
+  
+  // 500에러 강제
+  // const data = undefined;
+  // console.log(data.title);
+
   res.render('index', { 
     studyList, 
     pageTitle: 'HOME 화면',
@@ -74,6 +79,17 @@ app.use((req, res) => {
   res.status(404).render('404', {
     errorNum: '404',
     pageTitle: '페이지를 찾을 수 없습니다',
+    activeMenu: ''
+  });
+});
+
+// 500
+app.use((err, req, res, next) => {
+  console.log(err.stack);
+
+  res.status(500).render('500', {
+    errorNum: '500',
+    pageTitle: '서버 오류가 발생했습니다',
     activeMenu: ''
   });
 });
