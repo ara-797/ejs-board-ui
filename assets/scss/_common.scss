@@ -33,3 +33,27 @@
         }
     }
 }
+.error-page {
+    margin: 20px 0;
+
+    .inner-error {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+        border-radius: 10px;
+        background-color: #eee;
+
+        .number {
+            font-size: 35px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    }
+    a {
+        display: block;
+        color: #333;
+        margin-top: 15px;
+        text-align: center;
+    }
+}

@@ -52,6 +52,10 @@ table {
   border-spacing: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Common */
 .container {
   padding: 0 20px;
@@ -87,6 +91,29 @@ table {
 }
 .button-wrap a.active, .button-wrap button.active {
   background-color: #333;
+}
+
+.error-page {
+  margin: 20px 0;
+}
+.error-page .inner-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  border-radius: 10px;
+  background-color: #eee;
+}
+.error-page .inner-error .number {
+  font-size: 35px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+.error-page a {
+  display: block;
+  color: #333;
+  margin-top: 15px;
+  text-align: center;
 }
 
 /* Header */
@@ -136,27 +163,71 @@ table {
 }
 
 /* Todo List */
-.todo-list li {
+.todo-list li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.todo-list li a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 14px;
+  color: #333;
   border-radius: 5px;
   background-color: #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   padding: 12px 15px;
 }
-.todo-list li:not(:last-child) {
-  margin-bottom: 10px;
-}
 .todo-list li .status {
-  font-size: 14px;
   color: #555;
 }
-.todo-list li.done {
+.todo-list li.done a {
   background: #e0f8ff;
 }
 .todo-list li.done p {
   text-decoration: line-through;
+}
+
+/* Todo Detail */
+.detail-wrap {
+  margin: 15px 0;
+}
+.detail-wrap .top-wrap {
+  display: flex;
+  align-items: center;
+}
+.detail-wrap .top-wrap .number {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #333;
+}
+.detail-wrap .top-wrap .status {
+  margin-left: 10px;
+}
+.detail-wrap .content-wrap {
+  min-height: 100px;
+  border-radius: 5px;
+  background-color: #eee;
+  padding: 15px;
+  margin-top: 15px;
+}
+.detail-wrap .btn-wrap {
+  margin-top: 20px;
+  text-align: right;
+}
+.detail-wrap .btn-wrap a {
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #333;
+  padding: 0 12px;
 }
 
 /*# sourceMappingURL=style.css.map */

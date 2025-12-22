@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO Detail</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <%- include('components/header') %>
+
+    <div class="container">
+        <div class="detail-wrap">
+            <div class="top-wrap">
+                <p class="number"><%= todo.id %></p>
+                <p class="status"><%= todo.done ? '완료' : '미완료' %></p>
+            </div>
+            <div class="content-wrap">
+                <%= todo.text %>
+            </div>
+            <div class="btn-wrap">
+                <a href="/todo">목록으로</a>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

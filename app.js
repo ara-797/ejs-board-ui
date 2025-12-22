@@ -42,7 +42,6 @@ app.get('/todo', (req, res) => {
   if(filter === 'done') {
     filteredList = todoList.filter(todo => todo.done);
   }
-
   res.render('todo', { 
     filteredList, 
     pageTitle: 'TODO 리스트',
@@ -51,6 +50,35 @@ app.get('/todo', (req, res) => {
   });
 });
 
+// TODO Detail
+app.get('/todo/:id', (req, res) => {
+  const id = Number(req.params.id);
+  const todo = todoList.find(item => item.id === id);
+
+  if(!todo) {
+    return res.status(404).render('404', {
+      errorNum: '404',
+      pageTitle: '페이지를 찾을 수 없습니다',
+      activeMenu: ''
+    });
+  }
+  res.render('todo-detail', {
+    todo,
+    pageTitle: 'TODO 상세 페이지',
+    activeMenu: 'todo'
+  });
+});
+
+// 404
+app.use((req, res) => {
+  res.status(404).render('404', {
+    errorNum: '404',
+    pageTitle: '페이지를 찾을 수 없습니다',
+    activeMenu: ''
+  });
+});
+
 app.listen(3000, () => {
   console.log('http://localhost:3000 서버 실행 중');
 });
+
