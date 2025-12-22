@@ -8,13 +8,13 @@ app.set('view engine', 'ejs');
 app.use('/assets', express.static('assets'));
 
 const studyList = [
-  { id: 1, subject: '반복문', syntax: "<% todos.forEach() %>" },
-  { id: 2, subject: '조건문', syntax: "<% if() %> <% else %>" },
-  { id: 3, subject: 'include 문법', syntax: "<%- include('파일경로') %>" },
-  { id: 4, subject: '변수 출력', syntax: "<%= %>" },
-  { id: 5, subject: 'HTML escape 없이 출력', syntax: "<%- %>" },
-  { id: 6, subject: 'partials 나누기 (components) : header + item(옵션)', syntax: '' },
-  { id: 7, subject: 'EJS 내부에서 JavaScript 활용하기', syntax: '' }
+  { id: 1, subject: '반복문', syntax: "<% todos.forEach() %>", htmlContent: '<p>HTML 콘텐츠 01</p>' },
+  { id: 2, subject: '조건문', syntax: "<% if() %> <% else %>", htmlContent: '<p>HTML 콘텐츠 02</p>' },
+  { id: 3, subject: 'include 문법', syntax: "<%- include('파일경로') %>", htmlContent: '<p>HTML 콘텐츠 03</p>' },
+  { id: 4, subject: '변수 출력', syntax: "<%= %>", htmlContent: '<p>HTML 콘텐츠 04</p>' },
+  { id: 5, subject: 'HTML escape 없이 출력', syntax: "<%- %>", htmlContent: '<p>HTML 콘텐츠 05</p>' },
+  { id: 6, subject: 'partials 나누기 (components) : header + item(옵션)', syntax: '', htmlContent: '<p>HTML 콘텐츠 06</p>' },
+  { id: 7, subject: 'EJS 내부에서 JavaScript 활용하기', syntax: '', htmlContent: '<p>HTML 콘텐츠 07</p>' }
 ];
 
 const todoList = [
