@@ -1,45 +1,29 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TODO</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-</head>
-<body>
-    
-    <!-- Header -->
-    <%- include('components/header') %>
+<!-- Page : Todo List -->
 
-    <!-- 리스트 데이터 가공 -->
-    <% 
-        const totalCnt = filteredList.length;
-        const doneCnt = filteredList.filter(todo => todo.done).length;
-    %>
+<!-- 리스트 데이터 가공 -->
+<% 
+    const totalCnt = filteredList.length;
+    const doneCnt = filteredList.filter(todo => todo.done).length;
+%>
 
-    <div class="container">
-        <div class="filter-wrap">
-            <h2 class="page-title">
-                <%= pageTitle %>
-                <span>(<%= doneCnt %>/<%= totalCnt %>)</span>
-            </h2>
-            <div class="button-wrap">
-                <a href="/todo" class="<%= activeFilter === 'all' ? 'active':'' %>">전체</a>
-                <a href="/todo?filter=done" class="<%= activeFilter === 'done' ? 'active':'' %>">완료</a>
-            </div>
-        </div>
-        
-        <!-- TODO List -->
-        <% if(filteredList.length > 0) { %>
-            <ul class="todo-list">
-                <% filteredList.forEach(todo => { %>
-                    <%- include('components/todo-item', {todo: todo}) %>
-                <% }) %>
-            </ul>
-        <% } else { %>
-            <p class="no-data">등록된 항목이 없습니다.</p>
-        <% } %>
+<div class="filter-wrap">
+    <h2 class="page-title">
+        <%= pageTitle %>
+        <span>(<%= doneCnt %>/<%= totalCnt %>)</span>
+    </h2>
+    <div class="button-wrap">
+        <a href="/todo" class="<%= activeFilter === 'all' ? 'active':'' %>">전체</a>
+        <a href="/todo?filter=done" class="<%= activeFilter === 'done' ? 'active':'' %>">완료</a>
     </div>
+</div>
 
-</body>
-</html>
+<!-- TODO List -->
+<% if(filteredList.length > 0) { %>
+    <ul class="todo-list">
+        <% filteredList.forEach(todo => { %>
+            <%- include('components/todo-item', {todo: todo}) %>
+        <% }) %>
+    </ul>
+<% } else { %>
+    <p class="no-data">등록된 항목이 없습니다.</p>
+<% } %>

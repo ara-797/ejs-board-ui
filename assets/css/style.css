@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
+  font-size: 16px;
   line-height: 1;
 }
 
@@ -57,20 +58,19 @@ a {
 }
 
 /* Common */
-.container {
-  padding: 0 20px;
-}
-
 .page-title {
+  font-size: 20px;
   font-weight: bold;
-  margin: 15px 0;
+  margin-bottom: 15px;
 }
 
 .filter-wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 5px 0;
+}
+.filter-wrap .button-wrap {
+  margin-bottom: 15px;
 }
 
 .button-wrap {
@@ -94,7 +94,7 @@ a {
 }
 
 .error-page {
-  margin: 20px 0;
+  margin: 20px;
 }
 .error-page .inner-error {
   display: flex;
@@ -112,8 +112,12 @@ a {
 .error-page a {
   display: block;
   color: #333;
-  margin-top: 15px;
+  margin-top: 20px;
   text-align: center;
+}
+
+.container {
+  padding: 20px;
 }
 
 /* Header */
@@ -148,23 +152,29 @@ a {
 }
 
 /* Study List */
+.study-list li {
+  border-radius: 10px;
+  background-color: #eee;
+  padding: 15px;
+}
 .study-list li:not(:last-child) {
   margin-bottom: 20px;
 }
 .study-list li p {
+  font-size: 15px;
   line-height: 1.5;
 }
 .study-list li .code-wrap {
   line-height: 1;
   border-radius: 5px;
-  background-color: #eee;
-  padding: 15px;
-  margin-top: 8px;
+  background-color: #ddd;
+  padding: 10px;
+  margin: 8px 0;
 }
 
 /* Todo List */
 .todo-list li:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .todo-list li a {
   display: flex;
@@ -175,7 +185,7 @@ a {
   border-radius: 5px;
   background-color: #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  padding: 12px 15px;
+  padding: 15px;
 }
 .todo-list li .status {
   color: #555;
@@ -189,7 +199,7 @@ a {
 
 /* Todo Detail */
 .detail-wrap {
-  margin: 15px 0;
+  margin-bottom: 15px;
 }
 .detail-wrap .top-wrap {
   display: flex;

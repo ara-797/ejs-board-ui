@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle || 'EJS PROJECT' %></title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <!-- 공통 Header -->
+    <%- include('components/header') %>
+
+    <div class="container">
+        <%- body %>
+    </div>
+</body>
+</html>
+
+

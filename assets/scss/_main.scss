@@ -1,18 +1,23 @@
 /* Study List */
 .study-list {
     li {
+        border-radius: 10px;
+        background-color: #eee;
+        padding: 15px;
+
         &:not(:last-child) {
             margin-bottom: 20px;
         }
         p {
+            font-size: 15px;
             line-height: 1.5;
         }
         .code-wrap {
             line-height: 1;
             border-radius: 5px;
-            background-color: #eee;
-            padding: 15px;
-            margin-top: 8px;
+            background-color: #ddd;
+            padding: 10px;
+            margin: 8px 0;
         }
     }
 }

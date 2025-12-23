@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= errorNum || 'EJS PROJECT' %></title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <div class="error-page">
+        <div class="inner-error">
+            <span class="number"><%= errorNum %></span>
+            <%= pageTitle %>
+        </div>
+        
+        <% if(errorNum !== '500') { %>
+            <a href="/">홈으로 돌아가기</a>
+        <% } %>
+    </div>
+</body>
+</html>

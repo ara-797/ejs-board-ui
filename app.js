@@ -1,8 +1,13 @@
 const express = require('express');
+const expressLayouts = require('express-ejs-layouts');
 const app = express();
 
 // EJS 사용 설정
 app.set('view engine', 'ejs');
+
+// layout 사용 설정
+app.use(expressLayouts);
+app.set('layout', 'layout'); // views > layout.ejs : 기본 레이아웃 파일 지정
 
 // 정적 파일(CSS) 설정
 app.use('/assets', express.static('assets'));
@@ -17,12 +22,113 @@ const studyList = [
   { id: 7, subject: 'EJS 내부에서 JavaScript 활용하기', syntax: '', htmlContent: '<p>HTML 콘텐츠 07</p>' }
 ];
 
+/*
+  - 상태 배지 UI
+  - 완료 여부 스타일 분기
+  - 우선순위 강조
+  - 담당자 / 날짜 표시
+*/
 const todoList = [
-  { id: 1, text: '해야할 일 01', done: true },
-  { id: 2, text: '해야할 일 02', done: false },
-  { id: 3, text: '해야할 일 03', done: false },
-  { id: 4, text: '해야할 일 04', done: false },
-  { id: 5, text: '해야할 일 05', done: true }
+  {
+    id: 1,
+    text: '메인 페이지 시안 검토',
+    done: true,
+    status: 'completed',        // pending | in-progress | completed | hold
+    priority: 'high',           // low | medium | high
+    assignee: '홍길동',
+    createdAt: '2025-01-02',
+    dueDate: '2025-01-05'
+  },
+  {
+    id: 2,
+    text: 'TODO 리스트 마크업',
+    done: false,
+    status: 'in-progress',
+    priority: 'medium',
+    assignee: '김퍼블',
+    createdAt: '2025-01-03',
+    dueDate: '2025-01-10'
+  },
+  {
+    id: 3,
+    text: '접근성 aria 속성 점검',
+    done: false,
+    status: 'pending',
+    priority: 'high',
+    assignee: '이접근',
+    createdAt: '2025-01-04',
+    dueDate: '2025-01-08'
+  },
+  {
+    id: 4,
+    text: '헤더 레이아웃 수정',
+    done: true,
+    status: 'completed',
+    priority: 'low',
+    assignee: '홍길동',
+    createdAt: '2025-01-01',
+    dueDate: '2025-01-03'
+  },
+  {
+    id: 5,
+    text: '관리자 페이지 테이블 스타일',
+    done: false,
+    status: 'hold',
+    priority: 'medium',
+    assignee: '김퍼블',
+    createdAt: '2025-01-06',
+    dueDate: null
+  },
+  {
+    id: 6,
+    text: 'Swiper 슬라이드 접근성 개선',
+    done: true,
+    status: 'completed',
+    priority: 'high',
+    assignee: '이접근',
+    createdAt: '2025-01-02',
+    dueDate: '2025-01-04'
+  },
+  {
+    id: 7,
+    text: '404 / 500 페이지 마크업',
+    done: false,
+    status: 'in-progress',
+    priority: 'low',
+    assignee: '홍길동',
+    createdAt: '2025-01-07',
+    dueDate: '2025-01-12'
+  },
+  {
+    id: 8,
+    text: 'SCSS 구조 정리',
+    done: false,
+    status: 'pending',
+    priority: 'medium',
+    assignee: '김퍼블',
+    createdAt: '2025-01-08',
+    dueDate: '2025-01-15'
+  },
+  {
+    id: 9,
+    text: '레이아웃 공통 컴포넌트 분리',
+    done: true,
+    status: 'completed',
+    priority: 'medium',
+    assignee: '홍길동',
+    createdAt: '2025-01-03',
+    dueDate: '2025-01-06'
+  },
+  {
+    id: 10,
+    text: '관리자 UI 패턴 정리 문서',
+    done: false,
+    status: 'in-progress',
+    priority: 'high',
+    assignee: '이접근',
+    createdAt: '2025-01-09',
+    dueDate: '2025-01-14'
+  }
 ];
 
 // HOME
@@ -61,10 +167,10 @@ app.get('/todo/:id', (req, res) => {
   const todo = todoList.find(item => item.id === id);
 
   if(!todo) {
-    return res.status(404).render('error', {
+    return res.status(404).render('empty', {
       errorNum: '404',
       pageTitle: '페이지를 찾을 수 없습니다',
-      activeMenu: ''
+      layout: 'error-layout'
     });
   }
   res.render('todo-detail', {
@@ -76,10 +182,10 @@ app.get('/todo/:id', (req, res) => {
 
 // 404
 app.use((req, res) => {
-  res.status(404).render('error', {
+  res.status(404).render('empty', {
     errorNum: '404',
     pageTitle: '페이지를 찾을 수 없습니다',
-    activeMenu: ''
+    layout: 'error-layout'
   });
 });
 
@@ -87,10 +193,10 @@ app.use((req, res) => {
 app.use((err, req, res, next) => {
   console.log(err.stack);
 
-  res.status(500).render('error', {
+  res.status(500).render('empty', {
     errorNum: '500',
     pageTitle: '서버 오류가 발생했습니다',
-    activeMenu: ''
+    layout: 'error-layout'
   });
 });
 

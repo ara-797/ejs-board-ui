@@ -1,29 +1,11 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-</head>
-<body>
-    
-    <!-- Header -->
-    <%- include('components/header') %>
+<!-- Page : Main -->
+<main class="main">
+    <h2 class="page-title"><%= pageTitle %></h2>
 
-    <main class="main">
-        <div class="container">
-            <h2 class="page-title"><%= pageTitle %></h2>
-
-            <!-- EJS 스터디 리스트 -->
-            <ul class="study-list">
-                <% studyList.forEach(study => { %>
-                    <%- include('components/study-item', {study: study}) %>
-                <% }) %>
-            </ul>
-            
-        </div>
-    </main>
-
-</body>
-</html>
+    <!-- EJS 스터디 리스트 -->
+    <ul class="study-list">
+        <% studyList.forEach(study => { %>
+            <%- include('components/study-item', {study: study}) %>
+        <% }) %>
+    </ul>
+</main>
