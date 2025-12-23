@@ -8,21 +8,31 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            font-size: 14px;
-            color: #333;
-            border-radius: 5px;
+            border: 1px solid #eee;
             background-color: #fff;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-radius: 5px;
             padding: 15px;
         }
+        .title {
+            font-size: 14px;
+            color: #333;
+        }
 		.status {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
             color: #555;
+
+            .badge {
+                margin-left: 5px;
+            }
 		}
         &.done {
             a {
-                background: #e0f8ff;
+                border: 1px solid #d6f6ff;
+                background-color: #e0f8ff;
             }
-            p {
+            .title {
                 text-decoration: line-through;
             }
         }
@@ -31,29 +41,17 @@
 
 /* Todo Detail */
 .detail-wrap {
-    margin-bottom: 15px;
-
     .top-wrap {
         display: flex;
         align-items: center;
-
-        .number {
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            border-radius: 5px;
-            background-color: #333;
-        }
+        
         .status {
-            margin-left: 10px;
+            margin-left: 5px;
         }
     }
     .content-wrap {
         min-height: 100px;
-        border-radius: 5px;
+        border-radius: 10px;
         background-color: #eee;
         padding: 15px;
         margin-top: 15px;
@@ -63,7 +61,7 @@
         text-align: right;
 
         a {
-            height: 40px;
+            height: 38px;
             display: inline-flex;
             align-items: center;
             font-size: 14px;

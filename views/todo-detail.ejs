@@ -1,7 +1,7 @@
 <!-- Page : Todo Detail -->
 <div class="detail-wrap">
     <div class="top-wrap">
-        <p class="number"><%= todo.id %></p>
+        <span class="badge <%= todo.status %>"><%= todo.status %></span>
         <p class="status"><%= todo.done ? '완료' : '미완료' %></p>
     </div>
     <div class="content-wrap">

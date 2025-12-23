@@ -58,3 +58,19 @@
         text-align: center;
     }
 }
+.badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 5px;
+    padding: 0 10px;
+
+    &.pending { background-color: #9CA3AF; }
+    &.in-progress { background-color: #2563EB; }
+    &.completed { background-color: #16A34A; }
+    &.hold { background-color: #D97706; }
+}

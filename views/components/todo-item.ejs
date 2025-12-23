@@ -1,12 +1,14 @@
 <!-- Component : Todo Item -->
 <li class="todo-item <%= todo.done ? 'done':'' %>">
     <a href="/todo/<%= todo.id %>">
-        <p><%= todo.text %></p>
-
-        <% if(todo.done) { %>
-            <span class="status">완료</span>
-        <% } else { %>
-            <span class="status">미완료</span>
-        <% } %>
+        <p class="title"><%= todo.text %></p>    
+        <p class="status">
+            <% if(todo.done) { %>
+                완료
+            <% } else { %>
+                미완료
+            <% } %>
+            <span class="badge <%= todo.status %>"><%= todo.status %></span>
+        </p>
     </a>
 </li>

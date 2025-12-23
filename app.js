@@ -33,7 +33,7 @@ const todoList = [
     id: 1,
     text: '메인 페이지 시안 검토',
     done: true,
-    status: 'completed',        // pending | in-progress | completed | hold
+    status: 'completed',        // pending(대기/예정) | in-progress(진행 중) | completed(완료) | hold(보류/중단)
     priority: 'high',           // low | medium | high
     assignee: '홍길동',
     createdAt: '2025-01-02',
